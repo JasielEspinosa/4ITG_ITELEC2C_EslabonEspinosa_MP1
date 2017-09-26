@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class MD80 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "MD80";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -51,8 +58,21 @@ public class MD80 extends Aircraft {
 	public String viewEngineTypes() {
 		String text;
 		text = "<ul style=\"list-style-type:disc\">"
-				+"<li>Pratt & Whitney JT8D-200 series</li>"
-				+"</ul><br/><p>Price at $50,000,000.00</p>";
+				+"<li>Pratt & Whitney JT8D-200 series</li></ul>";
+		return text;
+	}
+	
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 50000000.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "";
 		return text;
 	}
 

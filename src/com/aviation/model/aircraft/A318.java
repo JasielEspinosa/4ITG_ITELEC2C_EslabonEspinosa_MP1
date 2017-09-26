@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class A318 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "A318";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -44,7 +51,21 @@ public class A318 extends Aircraft {
 	public String viewEngineTypes() {
 		String text;
 		text = "<ul style=\"list-style-type:disc\">" + "<li>CFM56-5B8/P</li>" + "<li>CFM56-5B9/P</li>"
-				+ "<li>PW6122A    </li>" + "<li>PW6124A    </li>" + "</ul><br/><p>Price at $18,000,000.00</p>";
+				+ "<li>PW6122A    </li>" + "<li>PW6124A    </li></ul>";
+		return text;
+	}
+	
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 18000000.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "";
 		return text;
 	}
 

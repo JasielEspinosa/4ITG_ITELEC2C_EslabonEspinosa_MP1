@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class B767 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "B767";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -52,7 +59,21 @@ public class B767 extends Aircraft {
 				+ "<li>GE CF6-80C2-B8F </li>" + "<li>GE CF6-80C2-B7F1</li>" + "<li>GE CF6-80C2-B8F </li>"
 				+ "<li>P&W JT9D-7R4    </li>" + "<li>P&W JT9D-7R4E   </li>" + "<li>P&W PW4052      </li>"
 				+ "<li>P&W PW4056      </li>" + "<li>P&W PW4060      </li>" + "<li>P&W PW4062      </li>"
-				+ "<li>RB211-524G      </li>" + "<li>RB211-524H      </li>" + "</ul><br/><p>Price at $46,400,000.00</p>";
+				+ "<li>RB211-524G      </li>" + "<li>RB211-524H      </li></ul>";
+		return text;
+	}
+	
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 46400000.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "";
 		return text;
 	}
 

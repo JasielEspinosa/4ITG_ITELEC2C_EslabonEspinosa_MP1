@@ -27,18 +27,11 @@ public class ProcessFactoryAircraftType extends HttpServlet implements IntroText
 			throws ServletException, IOException {
 
 		String input_aircraftType = request.getParameter("selectedAircraftType");
-		
 		Aircraft aircraft = new AircraftFactory().getAircraft(input_aircraftType);
-		
 		Detail detail = new DetailFactory().getDetail(input_aircraftType);
 		aircraft.setDetail(detail);
-
-		//Display.viewDetails(aircraft);
-
 		request.setAttribute("aircraft", aircraft);
-		
-		request.getRequestDispatcher("display.jsp").forward(request, response);
-		
+		request.getRequestDispatcher("displayDetails.jsp").forward(request, response);
 	}
 
 }

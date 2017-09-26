@@ -5,6 +5,13 @@
 <jsp:useBean id="aircraft" type="com.aviation.model.aircraft.Aircraft"
 	scope="request"></jsp:useBean>
 
+<%@ page import="java.text.NumberFormat"%>
+<%
+	NumberFormat nf = NumberFormat.getInstance();
+	nf.setMaximumFractionDigits(2);
+	nf.setMinimumFractionDigits(2);
+%>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -35,7 +42,6 @@ h1 {
 	background-color: teal;
 	border-color: white;
 	color: yellow;
-	
 }
 
 h2 {
@@ -59,6 +65,15 @@ h3 {
 	font-size: 25px;
 	font-family: inherit;
 	color: white;
+}
+
+h4 {
+	font-size: 175%;
+	font-family: inherit;
+	color: red;
+	text-decoration: underline;
+	text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px
+		1px 0 white;
 }
 
 p {
@@ -93,49 +108,70 @@ option {
 </style>
 
 <body class="container">
-	<h1>Carl's and Jasiel's Aircrafturers <img src="images/logo.png" style="width: 50px; height: 50px;"></h1>
+	<h1>
+		Carl's and Jasiel's Aircrafturers <img src="images/logo.png"
+			style="width: 50px; height: 50px;">
+	</h1>
 	<h2><%=aircraft.viewModel()%></h2>
 	<div align="center">
 		<b><%=aircraft.viewImage()%></b>
 	</div>
 	<br />
-	<br />
-	<form action="index.jsp">
+	<form action="procorder.html" method='post'>
+
+		<h4 align="center">
+			<b><%=aircraft.displayStatus()%></b>
+		</h4>
+
+		<input type="hidden" name="acid" value=<%=aircraft.acID()%> />
+		<%
+			if (aircraft.acPrice() != 0) {
+		%>
 		<input type="submit" style="float: right;" class="btn btn-primary"
-			value="Start Again">
-	</form>
-	<form>
-		<input TYPE="button" VALUE="Go Back" class="btn btn-danger"
-			style="float: left;" onClick="history.go(-1)">
-	</form>
-	<br />
-	<br />
-	<br />
-	<p>
-		<b><%=aircraft.viewDescription()%></b>
-	</p>
-	<br/>
-	<p>
-		<b><%=aircraft.getDetail().displayDetail()%></b>
-	</p>
-	<p>
-		Manufacturer: <b><%=aircraft.getDetail().displayManufacturer()%></b>
-	</p>
-	<p>
-		Similar Models: <b><%=aircraft.viewSimilarModels()%></b>
-	</p>
-	<p>
-		Engine Types: <b><%=aircraft.viewEngineTypes()%></b>
-	</p>
-	<br />
-	<br />
-	<form action="index.jsp">
+			value="Add to Cart">
+		<%
+			}
+		%>
+		<br />
+
+		<div>
+			<input type="button" value="Go Back" class="btn btn-danger"
+				style="float: left;" onClick="history.go(-1)">
+		</div>
+
+		<br /> <br /> <br />
+
+		<p>
+			<b><%=aircraft.viewDescription()%></b>
+		</p>
+		<br />
+		<p>
+			<b><%=aircraft.getDetail().displayDetail()%></b>
+		</p>
+		<p>
+			Manufacturer: <b><%=aircraft.getDetail().displayManufacturer()%></b>
+		</p>
+		<p>
+			Similar Models: <b><%=aircraft.viewSimilarModels()%></b>
+		</p>
+		<p>
+			Engine Types: <b><%=aircraft.viewEngineTypes()%></b>
+		</p>
+		<p>
+			Price: $<b><%=nf.format(aircraft.acPrice())%></b>
+		</p>
+		<br /> <br />
+		<%
+			if (aircraft.acPrice() != 0) {
+		%>
 		<input type="submit" style="float: right;" class="btn btn-primary"
-			value="Start Again">
-	</form>
-	<form>
-		<input TYPE="button" VALUE="Go Back" class="btn btn-danger"
+			value="Add to Cart">
+		<%
+			}
+		%>
+		<input type="button" value="Go Back" class="btn btn-danger"
 			style="float: left;" onClick="history.go(-1)">
+
 	</form>
 </body>
 </html>

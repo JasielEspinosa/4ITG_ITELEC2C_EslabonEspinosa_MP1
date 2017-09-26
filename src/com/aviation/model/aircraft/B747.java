@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class B747 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "B747";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -12,7 +19,7 @@ public class B747 extends Aircraft {
 		text = "The Boeing 747-400";
 		return text;
 	}
-	
+
 	@Override
 	public String viewImage() {
 		String imagePath = "<img src='images/B747 PAL.jpg' class=\"image\"/>"
@@ -52,7 +59,21 @@ public class B747 extends Aircraft {
 		text = "<ul style=\"list-style-type:disc\">" + "<li>CF6                   </li>"
 				+ "<li>GE CF6	            </li>" + "<li>GEnx-2B67             </li>"
 				+ "<li>Pratt & Whitney JT9D-7</li>" + "<li>PW4000                </li>"
-				+ "<li>RB211                 </li>" + "<li>Rolls-Royce RB211-524 </li>" + "</ul><br/><p>Price at $78,500,000.00</p>";
+				+ "<li>RB211                 </li>" + "<li>Rolls-Royce RB211-524 </li></ul>";
+		return text;
+	}
+
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 78500000.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "Phasing Out";
 		return text;
 	}
 

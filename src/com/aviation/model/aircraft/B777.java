@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class B777 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "B777";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -60,7 +67,21 @@ public class B777 extends Aircraft {
 		text = "<ul style=\"list-style-type:disc\">" + "<li>PW 4077   </li>" + "<li>PW 4090   </li>"
 				+ "<li>PW 4098   </li>" + "<li>RR 877    </li>" + "<li>RR 892    </li>" + "<li>RR 895    </li>"
 				+ "<li>GE90-77B	</li>" + "<li>GE90-92B  </li>" + "<li>GE90-94B	</li>" + "<li>GE90-110B1</li>"
-				+ "<li>GE90-115B1</li>" + "</ul><br/><p>Price at $57,440,000.00</p>";
+				+ "<li>GE90-115B1</li></ul>";
+		return text;
+	}
+	
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 57440000.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "";
 		return text;
 	}
 

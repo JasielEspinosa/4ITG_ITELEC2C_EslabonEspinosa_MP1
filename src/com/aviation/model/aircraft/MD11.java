@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class MD11 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "MD11";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -44,7 +51,21 @@ public class MD11 extends Aircraft {
 	public String viewEngineTypes() {
 		String text;
 		text = "<ul style=\"list-style-type:disc\">" + "<li>Pratt & Whitney PW4460      </li>"
-				+ "<li>Pratt & Whitney PW4462      </li>" + "<li>General Electric CF6-80C2D1F</li>" + "</ul><br/><p>Price at $62,000,000.00</p>";
+				+ "<li>Pratt & Whitney PW4462      </li>" + "<li>General Electric CF6-80C2D1F</li></ul>";
+		return text;
+	}
+	
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 62000000.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "";
 		return text;
 	}
 

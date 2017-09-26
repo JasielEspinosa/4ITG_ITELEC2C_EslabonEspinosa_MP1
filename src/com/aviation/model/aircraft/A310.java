@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class A310 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "A310";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -47,8 +54,21 @@ public class A310 extends Aircraft {
 				+"<li>General Electric CF6-80C2As</li>"
 				+"<li>Pratt & Whitney JT9D-59s 	 </li>"
 				+"<li>Pratt & Whitney JT9D-7R4H1 </li>"
-				+"<li>Pratt & Whitney PW4158 <br/>"
-				+"</ul><br/><p>Price: NOT FOR SALE (Retired)</p>";
+				+"<li>Pratt & Whitney PW4158 </li></ul>";
+		return text;
+	}
+	
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 0.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "Not For Sale";
 		return text;
 	}
 

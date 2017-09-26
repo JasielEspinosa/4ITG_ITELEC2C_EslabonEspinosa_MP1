@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class A350 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "A350";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -51,7 +58,21 @@ public class A350 extends Aircraft {
 	@Override
 	public String viewEngineTypes() {
 		String text;
-		text = "<ul style=\"list-style-type:disc\">" + "<li>Trent XWB-84</li>" + "<li>Trent XWB-97</li>" + "</ul><br/><p>Price at $65,000,000.00</p>";
+		text = "<ul style=\"list-style-type:disc\">" + "<li>Trent XWB-84</li>" + "<li>Trent XWB-97</li></ul>";
+		return text;
+	}
+	
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 0.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "";
 		return text;
 	}
 

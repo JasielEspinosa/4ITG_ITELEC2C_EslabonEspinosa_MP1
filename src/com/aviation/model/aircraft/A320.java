@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class A320 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "A320";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -12,7 +19,7 @@ public class A320 extends Aircraft {
 		text = "The Airbus A320";
 		return text;
 	}
-	
+
 	@Override
 	public String viewImage() {
 		String imagePath = "<img src='images/A320 PAL.jpg' class=\"image\"/>"
@@ -57,7 +64,21 @@ public class A320 extends Aircraft {
 				+ "<li>CFM56-5A1 or 5A1/F          </li>" + "<li>CFM56-5A3                   </li>"
 				+ "<li>CFM56-5B4 or 5B4/P or 5B4/2P</li>" + "<li>CFM56-5B5                   </li>"
 				+ "<li>CFM56-5B6                   </li>" + "<li>IAE Model V2500-A1          </li>"
-				+ "<li>IAE Model V2527-A5          </li>" + "<li>IAE Model V2527E-A5         </li>" + "</ul><br/><p>Price at $20,500,000.00</p>";
+				+ "<li>IAE Model V2527-A5          </li>" + "<li>IAE Model V2527E-A5         </li></ul>";
+		return text;
+	}
+
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 20150000.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "";
 		return text;
 	}
 

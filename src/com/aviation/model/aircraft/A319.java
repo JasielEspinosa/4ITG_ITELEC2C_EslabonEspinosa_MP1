@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class A319 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "A319";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -49,7 +56,21 @@ public class A319 extends Aircraft {
 				+ "<li>CFM56-5B6 or 5B6/P or 5B6/2P</li>" + "<li>CFM56-5A4 or 5A4/F          </li>"
 				+ "<li>CFM56-5A5 or 5A5/F          </li>" + "<li>CFM56-5B7 or 5B7/P          </li>"
 				+ "<li>IAE Model V2522-A5          </li>" + "<li>IAE Model V2524-A5          </li>"
-				+ "<li>IAE Model V2527M-A5         </li>" + "</ul><br/><p>Price at $19,250,000.00</p>";
+				+ "<li>IAE Model V2527M-A5         </li></ul>";
+		return text;
+	}
+	
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 19250000.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "";
 		return text;
 	}
 

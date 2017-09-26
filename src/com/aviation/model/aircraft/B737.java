@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class B737 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "B737";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -48,7 +55,21 @@ public class B737 extends Aircraft {
 	public String viewEngineTypes() {
 		String text;
 		text = "<ul style=\"list-style-type:disc\">" + "<li>737-200 JT8D          </li>"
-				+ "<li>737-800 CFM56         </li>" + "<li>737-9 MAX CFM LEAP-1B </li>" + "</ul><br/><p>Price at $20,730,000.00</p>";
+				+ "<li>737-800 CFM56         </li>" + "<li>737-9 MAX CFM LEAP-1B </li</ul>";
+		return text;
+	}
+	
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 20730000.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "";
 		return text;
 	}
 

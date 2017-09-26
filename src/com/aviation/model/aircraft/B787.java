@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class B787 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "B787";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -46,7 +53,21 @@ public class B787 extends Aircraft {
 	public String viewEngineTypes() {
 		String text;
 		text = "<ul style=\"list-style-type:disc\">" + "<li>General Electric GEnx-1B</li>"
-				+ "<li>Rolls-Royce Trent 1000</li>" + "</ul><br/><p>Price at $95,100,000.00</p>";
+				+ "<li>Rolls-Royce Trent 1000</li></ul>";
+		return text;
+	}
+	
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 95100000.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "";
 		return text;
 	}
 

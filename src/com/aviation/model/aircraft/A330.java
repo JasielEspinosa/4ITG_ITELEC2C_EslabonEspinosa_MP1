@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class A330 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "A330";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -59,7 +66,21 @@ public class A330 extends Aircraft {
 				+ "<li>General Electric CF6-80E1A3          </li>" + "<li>Pratt & Whitney PW4164               </li>"
 				+ "<li>Pratt & Whitney PW4168               </li>" + "<li>Pratt & Whitney PW4168A/4170         </li>"
 				+ "<li>Rolls-Royce Trent 768-60             </li>" + "<li>Rolls-Royce Trent 772-60             </li>"
-				+ "<li>Rolls-Royce Trent 772B/C-60          </li>" + "</ul><br/><p>Price at $32,150,000.00</p>";
+				+ "<li>Rolls-Royce Trent 772B/C-60          </li></ul>";
+		return text;
+	}
+	
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 32150000.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "";
 		return text;
 	}
 

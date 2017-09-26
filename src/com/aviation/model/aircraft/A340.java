@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class A340 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "A340";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -57,7 +64,21 @@ public class A340 extends Aircraft {
 				+ "<li>CFM 56-5C2                </li>" + "<li>CFM 56-5C3                </li>"
 				+ "<li>CFM 56-5C4                </li>" + "<li>RR Trent 553-61 / 553A2-61</li>"
 				+ "<li>RR Trent 556A2-61         </li>" + "<li>RR Trent 556-61 / 556A2-61</li>"
-				+ "<li>RR Trent 560A2-61         </li>" + "</ul><br/><p>Price at $35,750,000.00</p>";
+				+ "<li>RR Trent 560A2-61         </li></ul>";
+		return text;
+	}
+	
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 35750000.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "";
 		return text;
 	}
 

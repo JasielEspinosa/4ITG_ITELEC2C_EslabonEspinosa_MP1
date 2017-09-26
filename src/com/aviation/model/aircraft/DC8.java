@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class DC8 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "DC8";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -48,7 +55,21 @@ public class DC8 extends Aircraft {
 		String text;
 		text = "<ul style=\"list-style-type:disc\">" + "<li>CFM56-2    </li>" + "<li>P&W JT4A-3 </li>"
 				+ "<li>P&W JT4A-5 </li>" + "<li>P&W JT4A-9 </li>" + "<li>P&W JT4A-10</li>" + "<li>P&W JT3C-6 </li>"
-				+ "<li>P&W JT3D-3 </li>" + "<li>P&W JT3D-3B</li>" + "<li>RCo.12     </li>" + "</ul><br/><p>Price at $48,600,000.00</p>";
+				+ "<li>P&W JT3D-3 </li>" + "<li>P&W JT3D-3B</li>" + "<li>RCo.12     </li></ul>";
+		return text;
+	}
+	
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 48600000.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "";
 		return text;
 	}
 

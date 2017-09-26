@@ -129,10 +129,10 @@ option {
 			<input type='submit' value='Select' style="float: right;"
 				class="btn btn-success" />
 		</form>
-		<form>
+		
 			<input TYPE="button" VALUE="Go Back" class="btn btn-danger"
 				style="float: left;" onClick="history.go(-1)">
-		</form>
+		
 
 
 	</fieldset>

@@ -5,6 +5,13 @@ import com.aviation.model.details.*;
 public class A380 extends Aircraft {
 
 	private Detail detail;
+	
+	@Override
+	public String acID() {
+		String text;
+		text = "A380";
+		return text;
+	}
 
 	@Override
 	public String viewModel() {
@@ -12,7 +19,7 @@ public class A380 extends Aircraft {
 		text = "The Airbus A380";
 		return text;
 	}
-	
+
 	@Override
 	public String viewImage() {
 		String imagePath = "<img src='images/A380 UAE.jpg' class=\"image\"/>";
@@ -49,7 +56,21 @@ public class A380 extends Aircraft {
 	public String viewEngineTypes() {
 		String text;
 		text = "<ul style=\"list-style-type:disc\">" + "<li>Trent 970-84/970B-84  </li>"
-				+ "<li>Trent 972-84/972B-84  </li>" + "<li>Engine Alliance GP7270</li>" + "</ul><br/><p>Price at $100,000,000.00</p>";
+				+ "<li>Trent 972-84/972B-84  </li>" + "<li>Engine Alliance GP7270</li></ul>";
+		return text;
+	}
+
+	@Override
+	public double acPrice() {
+		double amount;
+		amount = 100000000.0;
+		return amount;
+	}
+	
+	@Override
+	public String displayStatus() {
+		String text;
+		text = "";
 		return text;
 	}
 
