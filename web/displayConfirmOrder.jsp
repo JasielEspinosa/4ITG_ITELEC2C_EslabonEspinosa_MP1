@@ -94,7 +94,9 @@ option {
 }
 
 .image {
-	max-width: 100%;
+	max-width: 55%;
+	display: block;
+    margin: 0 auto;
 }
 </style>
 
@@ -104,28 +106,29 @@ option {
 			style="width: 25px; height: 25px;">
 	</h1>
 	<h2><%=aircraft.viewModel()%></h2>
-	<div align="center">
+	<div class="image">
 		<b><%=aircraft.viewImage()%></b>
 	</div>
 	<br />
-	<p style="text-align: center;">
-		Price: $<b><%=nf.format(aircraft.acPrice())%></b>
-	</p>
-	<p>
-		<b>Your current budget is: <%=nf.format(aircraft.getCurrentBudget())%></b>
-	</p>
-	<br />
+	<div style="text-align: center;">
+		<p>
+			Price: $<b><%=nf.format(aircraft.acPrice())%></b>
+		</p>
+		<p>
+			<b>Your current budget is: <%=nf.format(aircraft.getCurrentBudget())%></b>
+		</p>
+	</div>
 	<form action="procsold.html" method='post'>
 
 		<input type="hidden" name="acid" value=<%=aircraft.acID()%> />
 
-		<div>
-			<label style="text-align: center;">Number of Orders: <input
-				type="number" min="1" max="9" name="noOfOrders" size="3"
-				required="required">
-			</label>
+		<div style="text-align: center;">
+			<p>
+				Number of Orders: <input type="number" min="1" max="50"
+					name="noOfOrders" size="3" required="required" style="color: blue">
+			</p>
 		</div>
-
+		<br /> <br />
 		<div>
 			<input type="submit" style="float: right;" class="btn btn-primary"
 				value="Order">
@@ -135,7 +138,6 @@ option {
 			<input type="button" value="Go Back" class="btn btn-danger"
 				style="float: left;" onClick="history.go(-1)">
 		</div>
-
 	</form>
 
 </body>

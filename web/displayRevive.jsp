@@ -5,16 +5,6 @@
 <jsp:useBean id="aircraft" type="com.aviation.model.aircraft.Aircraft"
 	scope="request"></jsp:useBean>
 
-<%@ page import="java.text.NumberFormat"%>
-<%
-	NumberFormat nfDouble = NumberFormat.getInstance();
-	nfDouble.setMaximumFractionDigits(2);
-	nfDouble.setMinimumFractionDigits(2);
-	NumberFormat nfInt = NumberFormat.getInstance();
-	nfInt.setMaximumFractionDigits(0);
-	nfInt.setMinimumFractionDigits(0);
-%>
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -91,54 +81,35 @@ option {
 
 .container {
 	padding-top: 15px;
-	padding-left: 35px;
-	padding-right: 35px;
+	padding-left: 100px;
+	padding-right: 100px;
 	padding-bottom: 75px;
 }
 
-.details {
-	text-align: center;
-}
-
-.image {
-	max-width: 100%;
-}
 </style>
 
 <body class="container">
 	<h1>
 		Carl's and Jasiel's Aircrafturers <img src="images/logo.png"
-			style="width: 50px; height: 50px;">
+			style="width: 25px; height: 25px;">
 	</h1>
-	<h2><%=aircraft.viewModel()%></h2>
-	<br />
-	<br />
-	<div class="details">
-	<p>
-		You have successfully ordered
-		<%=aircraft.viewModel()%>.
-	</p>
 
-	<p>
-		<b>Aircraft Price: <%=nfDouble.format(aircraft.acPrice())%></b>
-	</p>
+	<p style="text-align: center;">Your cash will be depleted. Press
+		"Try Again" or to Revive by having your flight income!</p>
 
-	<p>
-		<b>Number of Order: <%=nfInt.format(aircraft.getOrderCount())%></b>
-	</p>
-
-	<p>
-		<b>Total Price: <%=nfDouble.format(aircraft.getFinalPrice())%></b>
-	</p>
-
-	<p>
-		<b>Your current budget is now at: <%=nfDouble.format(aircraft.getCurrentBudget())%></b>
-	</p>
 	<br />
-	<br />
-	</div>
-	<form action="index.jsp" style="text-align: center;">
-		<input type="submit" class="btn btn-primary" value="Order Again">
+	<form action="procrevive.html" method='post'>
+
+		<input type="hidden" name="acid" value=<%=aircraft.acID()%> />
+
+		<div class=>
+			<input type="submit" style="float: right;" class="btn btn-primary"
+				value="Revive">
+			<input type="button" value="Try Again" class="btn btn-primary"
+				style="float: left;" onClick="history.go(-1)">
+		</div>
+
 	</form>
+
 </body>
 </html>

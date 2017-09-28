@@ -104,6 +104,8 @@ option {
 
 .image {
 	max-width: 100%;
+	display: block;
+    margin: 0 auto;
 }
 </style>
 
@@ -113,9 +115,10 @@ option {
 			style="width: 50px; height: 50px;">
 	</h1>
 	<h2><%=aircraft.viewModel()%></h2>
-	<div align="center">
+	<div class="image">
 		<b><%=aircraft.viewImage()%></b>
 	</div>
+	<br />
 	<br />
 	<form action="procorder.html" method='post'>
 
@@ -132,14 +135,9 @@ option {
 		<%
 			}
 		%>
+		<input type="button" value="Go Back" class="btn btn-danger"
+			style="float: left;" onClick="history.go(-1)"> <br /> <br />
 		<br />
-
-		<div>
-			<input type="button" value="Go Back" class="btn btn-danger"
-				style="float: left;" onClick="history.go(-1)">
-		</div>
-
-		<br /> <br /> <br />
 
 		<p>
 			<b><%=aircraft.viewDescription()%></b>

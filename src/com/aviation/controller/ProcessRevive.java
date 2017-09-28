@@ -14,8 +14,8 @@ import com.aviation.utility.AircraftFactory;
 import com.aviation.model.aircraft.*;
 import com.aviation.model.details.*;
 
-@WebServlet("/procorder.html")
-public class ProcessOrder extends HttpServlet implements IntroTexts {
+@WebServlet("/procrevive.html")
+public class ProcessRevive extends HttpServlet implements IntroTexts {
 
 	private static final long serialVersionUID = 1L;
 
@@ -30,10 +30,15 @@ public class ProcessOrder extends HttpServlet implements IntroTexts {
 		String input_aircraftType = request.getParameter("acid");
 		Aircraft aircraft = new AircraftFactory().getAircraft(input_aircraftType);
 		Detail detail = new DetailFactory().getDetail(input_aircraftType);
-		
+
+		// Sets the calculation of the final price
+		Aircraft.setBudget(aircraft.getCurrentBudget() + 350000000);
+
+		// passes the details to the output
 		aircraft.setDetail(detail);
 		request.setAttribute("aircraft", aircraft);
 		request.getRequestDispatcher("displayConfirmOrder.jsp").forward(request, response);
+
 	}
 
 }

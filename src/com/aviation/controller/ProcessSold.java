@@ -29,23 +29,33 @@ public class ProcessSold extends HttpServlet implements IntroTexts {
 
 		String input_aircraftType = request.getParameter("acid");
 		Aircraft aircraft = new AircraftFactory().getAircraft(input_aircraftType);
+		Detail detail = new DetailFactory().getDetail(input_aircraftType);
 
-		//Number of Orders
-		int orderCount = Integer.parseInt(request.getParameter("noOfOrders"));
+		// Number of Orders
+		double orderCount = Double.parseDouble(request.getParameter("noOfOrders"));
 		aircraft.setOrderCount(orderCount);
 
-		//Calculation of the aircraft price times the number of order/s
+		// Calculation of the aircraft price times the number of order/s
 		double finalPrice = aircraft.acPrice() * orderCount;
 		aircraft.setFinalPrice(finalPrice);
 
-		//Sets the calculation of the final price
-		Aircraft.setBudget(Aircraft.getBudget() - (finalPrice));
+		double calculate = Aircraft.getBudget() - (finalPrice);
 
-		//passes the details to the output
-		Detail detail = new DetailFactory().getDetail(input_aircraftType);
-		aircraft.setDetail(detail);
-		request.setAttribute("aircraft", aircraft);
-		request.getRequestDispatcher("displaySuccessOrder.jsp").forward(request, response);
+		if (calculate < 0) {
+			// If the budget reaches below 0, the order will repeat.
+			aircraft.setDetail(detail);
+			request.setAttribute("aircraft", aircraft);
+			request.getRequestDispatcher("displayRevive.jsp").forward(request, response);
+		} else {
+			// Sets the calculation of the final price
+			Aircraft.setBudget(calculate);
+
+			// passes the details to the output
+			aircraft.setDetail(detail);
+			request.setAttribute("aircraft", aircraft);
+			request.getRequestDispatcher("displaySuccessOrder.jsp").forward(request, response);
+		}
+
 	}
 
 }

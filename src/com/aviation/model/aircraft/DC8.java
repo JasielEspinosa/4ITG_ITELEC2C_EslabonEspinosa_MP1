@@ -62,14 +62,14 @@ public class DC8 extends Aircraft {
 	@Override
 	public double acPrice() {
 		double amount;
-		amount = 48600000.0;
+		amount = 0.0;
 		return amount;
 	}
 	
 	@Override
 	public String displayStatus() {
 		String text;
-		text = "";
+		text = "Not For Sale";
 		return text;
 	}
 

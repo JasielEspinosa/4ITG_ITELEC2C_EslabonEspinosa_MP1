@@ -22,7 +22,7 @@ public class DC9 extends Aircraft {
 	
 	@Override
 	public String viewImage() {
-		String imagePath = "<img src='images/DC9 PAL.jpg' class=\"image\"/>";
+		String imagePath = "<img src='images/DC9 CEB.jpg' class=\"image\"/>";
 		return imagePath;
 	}
 	

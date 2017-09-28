@@ -4,9 +4,9 @@ import com.aviation.model.details.*;
 
 public abstract class Aircraft {
 
-	private static double budget = 500000000;
+	private static double budget = 350000000;
 
-	private int orderCount;
+	private double orderCount;
 
 	private double finalPrice;
 
@@ -45,11 +45,11 @@ public abstract class Aircraft {
 		return budget;
 	}
 
-	public int getOrderCount() {
+	public double getOrderCount() {
 		return orderCount;
 	}
 
-	public void setOrderCount(int orderCount) {
+	public void setOrderCount(double orderCount) {
 		this.orderCount = orderCount;
 	}
 
