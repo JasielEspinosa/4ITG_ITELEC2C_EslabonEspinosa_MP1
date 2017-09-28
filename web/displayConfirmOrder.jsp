@@ -111,13 +111,20 @@ option {
 	<p style="text-align: center;">
 		Price: $<b><%=nf.format(aircraft.acPrice())%></b>
 	</p>
-	<!--<p>
-		<b>Your current budget is: </b>
-	</p>-->
+	<p>
+		<b>Your current budget is: <%=nf.format(aircraft.getCurrentBudget())%></b>
+	</p>
 	<br />
 	<form action="procsold.html" method='post'>
 
 		<input type="hidden" name="acid" value=<%=aircraft.acID()%> />
+
+		<div>
+			<label style="text-align: center;">Number of Orders: <input
+				type="number" min="1" max="9" name="noOfOrders" size="3"
+				required="required">
+			</label>
+		</div>
 
 		<div>
 			<input type="submit" style="float: right;" class="btn btn-primary"

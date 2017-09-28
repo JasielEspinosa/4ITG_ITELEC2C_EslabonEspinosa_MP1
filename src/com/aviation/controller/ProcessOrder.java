@@ -28,8 +28,10 @@ public class ProcessOrder extends HttpServlet implements IntroTexts {
 			throws ServletException, IOException {
 
 		String input_aircraftType = request.getParameter("acid");
+		
 		Aircraft aircraft = new AircraftFactory().getAircraft(input_aircraftType);
-		Detail detail = new DetailFactory().getDetail(input_aircraftType);	
+
+		Detail detail = new DetailFactory().getDetail(input_aircraftType);
 		aircraft.setDetail(detail);
 		request.setAttribute("aircraft", aircraft);
 		request.getRequestDispatcher("displayConfirmOrder.jsp").forward(request, response);

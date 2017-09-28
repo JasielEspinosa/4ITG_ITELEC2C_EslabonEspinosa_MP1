@@ -110,9 +110,22 @@ option {
 		You have successfully ordered
 		<%=aircraft.viewModel()%>.
 	</p>
-	<!--<p>
-		<b>Your current budget is now at: </b>
-	</p>-->
+
+	<p>
+		<b>Aircraft Price: <%=nf.format(aircraft.acPrice())%></b>
+	</p>
+
+	<p>
+		<b>Number of Order: <%=aircraft.getOrderCount()%></b>
+	</p>
+
+	<p>
+		<b>Total Price: <%=nf.format(aircraft.getFinalPrice())%></b>
+	</p>
+
+	<p>
+		<b>Your current budget is now at: <%=nf.format(aircraft.getCurrentBudget())%></b>
+	</p>
 	<br />
 	<br />
 	<form action="index.jsp" style="text-align: center;">

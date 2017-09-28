@@ -29,12 +29,20 @@ public class ProcessSold extends HttpServlet implements IntroTexts {
 
 		String input_aircraftType = request.getParameter("acid");
 		Aircraft aircraft = new AircraftFactory().getAircraft(input_aircraftType);
+
+		//Number of Orders
+		int orderCount = Integer.parseInt(request.getParameter("noOfOrders"));
+		aircraft.setOrderCount(orderCount);
+
+		//Calculation of the aircraft price times the number of order/s
+		double finalPrice = aircraft.acPrice() * orderCount;
+		aircraft.setFinalPrice(finalPrice);
+
+		//Sets the calculation of the final price
+		Aircraft.setBudget(Aircraft.getBudget() - (finalPrice));
+
+		//passes the details to the output
 		Detail detail = new DetailFactory().getDetail(input_aircraftType);
-
-/*		Double newBudget;
-		newBudget = aircraft.getBudget() - aircraft.acPrice();
-		aircraft.setBudget(newBudget);*/
-
 		aircraft.setDetail(detail);
 		request.setAttribute("aircraft", aircraft);
 		request.getRequestDispatcher("displaySuccessOrder.jsp").forward(request, response);

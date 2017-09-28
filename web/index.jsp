@@ -37,6 +37,9 @@ h2 {
 	color: #FFF;
 	font-family: Aldrich;
 	font-size: 5rem;
+	text-align: center;
+	color: black;
+	text-shadow: white 0.05em 0.05em 0.05em
 }
 
 h2_old {
