@@ -124,7 +124,7 @@ option {
 
 		<div style="text-align: center;">
 			<p>
-				Number of Orders: <input type="number" min="1" max="50"
+				Number of Order/s: <input type="number" min="1" max="50"
 					name="noOfOrders" size="3" required="required" style="color: blue">
 			</p>
 		</div>

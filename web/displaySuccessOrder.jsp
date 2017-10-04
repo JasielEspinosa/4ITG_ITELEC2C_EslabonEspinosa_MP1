@@ -124,7 +124,7 @@ option {
 	</p>
 
 	<p>
-		<b>Number of Order: <%=nfInt.format(aircraft.getOrderCount())%></b>
+		<b>Number of Order/s: <%=nfInt.format(aircraft.getOrderCount())%></b>
 	</p>
 
 	<p>
