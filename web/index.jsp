@@ -42,10 +42,10 @@ a:link {
 				href="javascript:void(0);" onclick="openNav()"><i
 				class="fa fa-bars"></i></a> <a href="index.jsp"
 				class="w3-bar-item w3-button w3-green allerta w3-large">Carl and
-				Jasiel's Aircraft Wiki</a>
+				Jasiel's Airfacturers</a>
 			<div class="w3-dropdown-hover w3-hide-small">
 				<button class="w3-button allerta w3-large" title="Notifications">
-					Shop Aircraft Wikifactures <i class="fa fa-caret-down"></i>
+					Shop Airfacturers <i class="fa fa-caret-down"></i>
 				</button>
 				<div class="w3-dropdown-content w3-card-4 w3-bar-block w3-large">
 					<a href="indexAirbus.jsp" class="w3-bar-item w3-button allerta">Airbus</a>

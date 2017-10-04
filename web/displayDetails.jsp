@@ -111,7 +111,7 @@ option {
 
 <body class="container">
 	<h1>
-		Carl's and Jasiel's Aircrafturers <img src="images/logo.png"
+		Carl's and Jasiel's Airfacturers <img src="images/logo.png"
 			style="width: 50px; height: 50px;">
 	</h1>
 	<h2><%=aircraft.viewModel()%></h2>

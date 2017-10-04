@@ -90,7 +90,7 @@ option {
 
 <body class="container">
 	<h1>
-		Carl's and Jasiel's Aircrafturers <img src="images/logo.png"
+		Carl's and Jasiel's Airfacturers <img src="images/logo.png"
 			style="width: 25px; height: 25px;">
 	</h1>
 
